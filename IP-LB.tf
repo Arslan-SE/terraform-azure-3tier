@@ -18,8 +18,8 @@ resource "azurerm_lb" "LoadBalancerWeb" {
   }
 }
 resource "azurerm_lb_rule" "Web-RDP-Rule" {
-  resource_group_name            = "${azurerm_resource_group.test.name}"
-  loadbalancer_id                = "${azurerm_lb.test.id}"
+  resource_group_name            = "${azurerm_resource_group.rsg.name}"
+  loadbalancer_id                = "${azurerm_lb.LoadBalancerWeb.id}"
   name                           = "${var.prefix}-LBRule"
   protocol                       = "Tcp"
   frontend_port                  = 3389
