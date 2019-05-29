@@ -24,7 +24,7 @@ resource "azurerm_lb_rule" "Web-RDP-Rule" {
   protocol                       = "Tcp"
   frontend_port                  = 3389
   backend_port                   = 3389
-  frontend_ip_configuration_name = "PublicIPAddress"
+  frontend_ip_configuration_name = "Web-PublicFacing"
 }
 resource "azurerm_lb_backend_address_pool" "Web-LBBackendPool" {
   resource_group_name = "${azurerm_resource_group.rsg.name}"
