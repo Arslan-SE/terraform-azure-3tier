@@ -17,6 +17,7 @@ resource "azurerm_lb" "LoadBalancerWeb" {
     public_ip_address_id = "${azurerm_public_ip.LoadBalancerPublicIP.id}"
   }
 }
+/*
 resource "azurerm_lb_rule" "Web-RDP-Rule" {
   resource_group_name            = "${azurerm_resource_group.rsg.name}"
   loadbalancer_id                = "${azurerm_lb.LoadBalancerWeb.id}"
@@ -26,6 +27,8 @@ resource "azurerm_lb_rule" "Web-RDP-Rule" {
   backend_port                   = 3389
   frontend_ip_configuration_name = "Web-PublicFacing"
 }
+
+*/
 resource "azurerm_lb_backend_address_pool" "Web-LBBackendPool" {
   resource_group_name = "${azurerm_resource_group.rsg.name}"
   loadbalancer_id     = "${azurerm_lb.LoadBalancerWeb.id}"
